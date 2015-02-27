@@ -198,7 +198,11 @@ ruby:
             version: ''
 nodejs:
     install: '1'
-    npm_packages: {  }
+    npm_packages:
+        - javascripting
+        - learnyounode
+        - git-it
+        - how-to-npm
 python:
     install: '1'
     packages: {  }
