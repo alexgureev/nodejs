@@ -203,6 +203,8 @@ nodejs:
         - learnyounode
         - git-it
         - how-to-npm
+        - bl
+        - concat-stream
 python:
     install: '1'
     packages: {  }
