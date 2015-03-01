@@ -205,6 +205,7 @@ nodejs:
         - how-to-npm
         - bl
         - concat-stream
+        - duplex
 python:
     install: '1'
     packages: {  }
