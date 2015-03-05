@@ -34,6 +34,6 @@ var server = http.createServer(function (req, res) {
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify(jsonResponse));
 
-})
+});
 
 server.listen(Number(process.argv[2]));
