@@ -203,9 +203,12 @@ nodejs:
         - learnyounode
         - git-it
         - how-to-npm
-        - bl
-        - concat-stream
-        - duplex
+        - expressworks
+        - stream-adventure
+        - promise-it-wont-hurt
+        - async-you
+        - nodebot-workshop
+        - planetproto
 python:
     install: '1'
     packages: {  }
