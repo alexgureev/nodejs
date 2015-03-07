@@ -1,0 +1,11 @@
+{
+  "name": "super-module",
+  "version": "1.0.0",
+  "description": "blabla",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "barif",
+  "license": "MIT"
+}
