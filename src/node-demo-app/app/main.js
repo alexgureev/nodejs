@@ -1,8 +1,10 @@
-var express = require('express'),
-    app = express(),
-    pages = require(__dirname + '/controllers/pages');
+var express = require('express')
+    , app = express()
+    , pages = require(__dirname + '/controllers/pages');
 
 // configuration settings 
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
 // mount routes
