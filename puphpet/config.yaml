@@ -75,7 +75,13 @@ cron:
     jobs: {  }
 firewall:
     install: '1'
-    rules: null
+    rules:
+        uEeXPs7Kl2rP:
+            port:
+                - '3000'
+            priority: '100'
+            proto: tcp
+            action: accept
 apache:
     install: '0'
     settings:
@@ -209,6 +215,7 @@ nodejs:
         - async-you
         - nodebot-workshop
         - planetproto
+        - express
 python:
     install: '1'
     packages: {  }
