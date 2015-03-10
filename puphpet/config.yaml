@@ -216,6 +216,7 @@ nodejs:
         - nodebot-workshop
         - planetproto
         - express
+        - workshopper-exercise
 python:
     install: '1'
     packages: {  }
