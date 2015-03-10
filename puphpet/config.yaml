@@ -66,6 +66,7 @@ server:
     packages:
         - htop
         - nano
+        - tmux
 users_groups:
     install: '1'
     groups: {  }
