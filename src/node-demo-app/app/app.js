@@ -24,5 +24,6 @@ app.get('/home', pages.home);
 app.get('/about', pages.about);
 app.post('/quote', quotes.quotePush);
 app.get('/quote/:id', quotes.quote);
+app.delete('/quote/:id', quotes.quoteDelete);
 
 module.exports = app;

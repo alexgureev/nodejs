@@ -1,5 +1,5 @@
 var request = require('supertest'),
-    app = require(__dirname + '/../../app');
+    app = require(__dirname + '/../../main');
 
 describe('Pages', function () {
     describe('GET /', function () {
