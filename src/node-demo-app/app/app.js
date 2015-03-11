@@ -18,7 +18,12 @@ app.use(cookieParser());
 app.use(expressSession({
     secret: 'keyboard cat',
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie: {
+        path: '/',
+        httpOnly: true,
+        secure: false,
+        maxAge: 360000 }
 }));
 
 // set view locals
@@ -36,5 +41,7 @@ app.get('/quote/:id', quotes.quote);
 app.delete('/quote/:id', quotes.quoteDelete);
 app.get('/account/profile', account.profile);
 app.get('/account/login', account.login);
+app.get('/account/countViews', account.countViews);
+
 
 module.exports = app;
