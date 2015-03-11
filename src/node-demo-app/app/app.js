@@ -6,6 +6,7 @@ var express = require('express'),
     account = require(__dirname + '/controllers/account'),
     bodyParser = require('body-parser'),
     expressSession = require('express-session'),
+    RedisStore = require('connect-redis')(expressSession),
     cookieParser = require('cookie-parser');
 
 // configuration settings 
@@ -16,6 +17,11 @@ app.use(express.static(__dirname + '/../public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(expressSession({
+    store: new RedisStore({
+        host: '127.0.0.1',
+        port: 6379,
+        db: 0
+    }),
     secret: 'keyboard cat',
     resave: false,
     saveUninitialized: true,

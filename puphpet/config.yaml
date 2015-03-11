@@ -67,6 +67,7 @@ server:
         - htop
         - nano
         - tmux
+        - redis-tools
 users_groups:
     install: '1'
     groups: {  }
