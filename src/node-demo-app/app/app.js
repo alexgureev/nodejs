@@ -9,9 +9,10 @@ var express = require('express'),
     cookieParser = require('cookie-parser');
 
 // configuration settings 
-app.engine('ejs', ejsLocals);
+//app.engine('ejs', ejsLocals);
 app.set('views', __dirname + config.path.views);
-app.set('view engine', 'ejs');
+//app.set('view engine', 'ejs');
+app.set('view engine', 'jade');
 app.use(express.static(__dirname + config.path.public));
 app.use(bodyParser.urlencoded(config.bodyParser));
 app.use(cookieParser());
