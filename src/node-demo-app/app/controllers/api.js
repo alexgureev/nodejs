@@ -16,6 +16,8 @@ exports.post = function (req, res) {
 }
 
 exports.list = function (req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    //res.end(JSON.stringify({ a: 1 }));
     Thread.find(function (err, threads) {
         res.send(threads);
     });
