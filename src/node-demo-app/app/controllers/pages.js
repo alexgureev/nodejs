@@ -13,3 +13,20 @@ exports.about = function (req, res) {
         message: 'This is the "about" action of "pages" controller'
     })
 };
+
+exports.mongo = function (req, res) {
+
+    var kittySchema = mongoose.Schema({
+        name: String
+    });
+
+    var Kitten = mongoose.model('Kitten', kittySchema);
+
+    var silence = new Kitten({name: 'Silence'})
+    console.log(silence.name);
+
+    res.json(silence);
+};
+
+
+

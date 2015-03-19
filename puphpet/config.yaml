@@ -223,8 +223,8 @@ python:
     install: '1'
     packages: {  }
     versions:
-        TheskwdL5MbZ:
-            version: ''
+        TOldPmf55TPf:
+            version: 2.7.6
 mysql:
     install: '0'
     override_options: {  }

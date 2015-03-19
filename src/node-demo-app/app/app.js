@@ -5,7 +5,8 @@ var express = require('express'),
     quotes = require(__dirname + config.path.quotes),
     account = require(__dirname + config.path.account),
     bodyParser = require('body-parser'),
-    cookieParser = require('cookie-parser');
+    cookieParser = require('cookie-parser'),
+    mongoose = require('mongoose');
 
 // configuration settings 
 app.set('views', __dirname + config.path.views);
@@ -21,10 +22,26 @@ app.use(function (req, res, next) {
     next()
 });
 
+// handle errors
+app.use(function (err, req, res, next) {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+});
+
+
+mongoose.connect('mongodb://nodejs:nodejs@127.0.0.1:27017/nodejs');
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function (callback) {
+    // yay!
+});
+
 // mount routes
 app.get('/', function (req, res) { res.redirect('/home') });
 app.get('/home', pages.home);
 app.get('/about', pages.about);
+app.get('/mongo', pages.mongo);
 app.post('/quote', quotes.quotePush);
 app.get('/quote/:id', quotes.quote);
 app.delete('/quote/:id', quotes.quoteDelete);
