@@ -8,6 +8,7 @@
             pages: "/controllers/pages",
             quotes: "/controllers/quotes",
             account: "/controllers/account",
+            api: "/controllers/api",
             views: "/views",
             public: "/../public"
         },
