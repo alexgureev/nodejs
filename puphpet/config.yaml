@@ -68,6 +68,11 @@ server:
         - nano
         - tmux
         - redis-tools
+        - graphite-web
+        - graphite-carbon
+        - postgresql
+        - libpq-dev
+        - python-psycopg2
 users_groups:
     install: '1'
     groups: {  }
@@ -81,6 +86,12 @@ firewall:
         uEeXPs7Kl2rP:
             port:
                 - '3000'
+            priority: '100'
+            proto: tcp
+            action: accept
+        uEeXPs7Klsdf:
+            port:
+                - '80'
             priority: '100'
             proto: tcp
             action: accept
