@@ -4,7 +4,9 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser'),
     mongoose = require('mongoose'),
-    methodOverride = require('method-override');
+    methodOverride = require('method-override'),
+    errorhandler = require('errorhandler'),
+    env = process.env.NODE_ENV || 'development';
 
 // configuration settings
 app.set('views', __dirname + config.path.views);
@@ -20,14 +22,21 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(function (req, res, next) {
     app.locals.route = req.url;
     next()
+
 });
 
-// handle errors
-app.use(function (err, req, res, next) {
-    console.error(err.stack);
-    res.status(500).send('Something broke!');
-});
+if (env === 'development') {
+    app.use(errorhandler({log: errorNotification}))
+}
 
+function errorNotification(err, str, req) {
+    var title = 'Error in ' + req.method + ' ' + req.url
+
+    notifier.notify({
+        title: title,
+        message: str
+    })
+}
 
 mongoose.connect('mongodb://nodejs:nodejs@127.0.0.1:27017/nodejs');
 
